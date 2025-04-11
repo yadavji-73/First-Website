@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #323030;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+    
+        main {
+          background-color: rgb(20, 19, 19);
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 0 15px rgba(252, 249, 249, 0.2);
+          width: 300px;
+        }
+    
+        h2 {
+          text-align: center;
+          color: #fbf8f8;
+        }
+    
+        label {
+          font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="email"] {
+          width: 100%;
+          padding: 8px;
+          margin-top: 5px;
+          margin-bottom: 15px;
+          border: 1px solid #684c4c;
+          border-radius: 5px;
+        }
+    
+        input[type="submit"] {
+          width: 100%;
+          background-color: #ff0008;
+          color: rgb(35, 33, 33);
+          padding: 10px;
+          border: darkred;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+        .thank-you {
+  display: none;
+  text-align: center;
+  color: #00ff88;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeScale 0.6s ease forwards;
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+      </style>
+    
+</head>
+<body>
+   <main>
+    <h2>❕CONTACT FORM❕</h2>
+   
+<form action="submit.html" method="post">
+    <label for="name">name:</label>
+    <input type="text"id="name" name="username" required><br><br>
+    <label for="email">email:</label>
+    <input type="email" name="useremail" id="email" required><br><br>
+    
+    <input type="submit" value="submit">
+    <p class="thank-you">Thank You</p>
+</form>
+
+   </main>
+   <script>
+    const form = document.querySelector("form");
+    const thankYouMessage = document.querySelector(".thank-you");
+  
+    thankYouMessage.style.display = "none";
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      thankYouMessage.style.display = "block";
+      thankYouMessage.style.animation = "fadeScale 0.6s ease forwards";
+      form.reset();
+    });
+  </script>
+  
+</body>
+</html>
